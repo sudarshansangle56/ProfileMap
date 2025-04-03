@@ -14,7 +14,7 @@ function Home({ profiles, deleteProfile }) {
     <div className="w-screen">
       <Navbar />
       <div className="flex justify-center items-center h-[400px] bg-gray-900">
-        <h1 className="text-4xl font-bold text-white">Tailwind CSS is Working! 🚀</h1>
+        <h1 className="text-4xl font-bold text-white">Profile Tracker 🚀</h1>
       </div>
       <div className="w-screen flex gap-5 flex-wrap p-5 items-center justify-center bg-gray-900">
         {profiles.map((user, index) => (
