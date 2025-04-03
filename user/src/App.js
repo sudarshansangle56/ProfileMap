@@ -16,7 +16,7 @@ function Home({ profiles, deleteProfile }) {
       <Navbar />
       <div className="flex flex-col justify-center items-center h-[400px] bg-gray-900">
         <h1 className="text-4xl font-bold text-white">Profile Tracker 🚀</h1>
-        <p className="p-2 mt-3 w-[60%] text-white">Profile Map is a platform where users can create, update, and delete profiles seamlessly. Users can add new profiles with details like name, description, location, and an image. The update feature allows modifying profile information, while the delete functionality enables removing profiles instantly. All changes are saved in localStorage, ensuring data persistence. The platform provides a smooth and interactive user experience with a responsive UI built using **React and Tailwind CSS. 🚀</p>
+        <p className="p-2 mt-3 w-[60%] text-white">Profile Map is a platform where users can create, update, and delete profiles seamlessly. Users can add new profiles with details like name, description, location, and an image. The update feature allows modifying profile information, while the delete functionality enables removing profiles instantly. All changes are saved in localStorage, ensuring data persistence. The platform provides a smooth and interactive user experience with a responsive UI built using React and Tailwind CSS. 🚀</p>
       </div>
       <div className="w-screen flex gap-5 flex-wrap p-5 items-center justify-center bg-gray-900">
         {profiles.map((user, index) => (
