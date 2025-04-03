@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { NavLink, useNavigate } from 'react-router-dom';
+import Navbar from './Navbar';
+import Footer from '../components/Footer';
 
 function Create({ addProfile }) {
   const [profile, setProfile] = useState({
@@ -28,7 +30,10 @@ function Create({ addProfile }) {
   };
 
   return (
+    <div>
+            <Navbar/>
     <div className="flex justify-center items-center min-h-screen">
+
       <div className='bg-white p-6 rounded-md shadow-lg w-96'>
         <h2 className='text-xl font-semibold text-center mb-4'>Create Profile</h2>
         <form onSubmit={handleSubmit} className='flex flex-col'>
@@ -40,6 +45,8 @@ function Create({ addProfile }) {
 
         </form>
       </div>
+    </div>
+    <Footer/>
     </div>
   );
 }

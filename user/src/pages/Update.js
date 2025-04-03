@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Navbar from "./Navbar";
+import Footer from "../components/Footer";
 
 function Update({ profiles, setProfiles }) {
   const [username, setUsername] = useState("");
@@ -40,6 +42,9 @@ function Update({ profiles, setProfiles }) {
   };
 
   return (
+    <div>
+  <Navbar/>
+    
     <div className="flex flex-col items-center justify-center min-h-screen">
       <h2 className="text-xl font-semibold mb-4">Edit Profile</h2>
       <input
@@ -87,6 +92,10 @@ function Update({ profiles, setProfiles }) {
         </form>
       )}
     </div>
+    <Footer/>
+    </div>
+    
+
   );
 }
 

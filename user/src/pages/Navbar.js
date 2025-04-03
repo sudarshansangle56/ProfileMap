@@ -9,7 +9,6 @@ function Navbar() {
         <div className="flex space-x-4">
           <Link to="/" className="hover:text-gray-400">Home</Link>
           <Link to="/create" className="hover:text-gray-400">Create</Link>
-          <Link to="/about" className="hover:text-gray-400">About</Link>
           <Link to="/update" className="hover:text-gray-400">update</Link>
           <Link to="/details" className="hover:text-gray-400">Contact</Link>
      
