@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; // Import useNavigate
 import Navbar from './Navbar';
 
 function Details({ profiles }) {
   const [sortedProfiles, setSortedProfiles] = useState([...profiles]);
+  const navigate = useNavigate(); // Initialize navigation
 
   // Function to sort profiles by name
   const sortByName = () => {
@@ -36,9 +38,14 @@ function Details({ profiles }) {
                 />
                 <div className="text-center mt-3">
                   <h2 className="text-lg font-semibold">{user.username}</h2>
-                  <p className="">Description: {user.description}</p>
-                  <h3 className="">Location: {user.location}</h3>
-                  <button className="mt-2 bg-red-500 text-white px-4 py-1 rounded-lg">View More</button>
+                  <p>Description: {user.description}</p>
+                  <h3>Location: {user.location}</h3>
+                  <button 
+                    className="mt-2 bg-red-500 text-white px-4 py-1 rounded-lg"
+                    onClick={() => navigate(`/profile/${user.username}`)} // Navigate to profile details page
+                  >
+                    View More
+                  </button>
                 </div>
               </div>
             ))

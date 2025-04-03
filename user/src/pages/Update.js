@@ -47,7 +47,7 @@ function Update({ profiles, setProfiles }) {
     
     <div className="flex flex-col bg-gray-900 items-center justify-center min-h-screen">
       <div className="max-w-[60%] min-h-[199px] p-5 rounded-lg bg-white">
-      <h2 className="text-xl p-3  text-white font-semibold  mb-4">Edit Profile</h2>
+      <h2 className="text-xs p-3  text-black font-semibold  mb-4">Enter Name for edit profile</h2>
       <input
         type="text"
         placeholder="Enter username"

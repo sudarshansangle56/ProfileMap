@@ -1,7 +1,6 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import Navbar from "./Navbar";
-import Footer from "../components/Footer";
 
 function ProfileDetails({ profiles }) {
   const { username } = useParams();
@@ -19,13 +18,13 @@ function ProfileDetails({ profiles }) {
   return (
     <div>
       <Navbar />
-      <div className="h-auto text-white bg-gray-900 min-w-[300px] min-h-screen p-5 flex flex-col items-center">
+      <div className="h-auto text-white bg-gray-900 min-w-[300px] min-h-screen p-5 flex flex-col ">
         <h1 className="text-3xl font-bold text-white text-center mb-6">
           {user.username}'s Profile
         </h1>
-        <div className="p-6 rounded-lg shadow-lg w-96 text-center">
+        <div className="p-6 rounded-lg shadow-lg w-96">
           <img
-            className="w-full   h-[250px] rounded-2xl object-cover"
+            className="w-full mt-5  min-h-[250px] rounded-2xl object-cover"
             src={user.image || "https://via.placeholder.com/250"}
             alt={user.username}
           />
@@ -34,9 +33,7 @@ function ProfileDetails({ profiles }) {
           <h3>Location: {user.location}</h3>
         </div>
       </div>
-      <Footer/>
     </div>
-    
   );
 }
 
