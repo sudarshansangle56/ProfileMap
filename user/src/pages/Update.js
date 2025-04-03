@@ -42,11 +42,12 @@ function Update({ profiles, setProfiles }) {
   };
 
   return (
-    <div>
+    <div className="bg-gray-900">
   <Navbar/>
     
-    <div className="flex flex-col items-center justify-center min-h-screen">
-      <h2 className="text-xl font-semibold mb-4">Edit Profile</h2>
+    <div className="flex flex-col bg-gray-900 items-center justify-center min-h-screen">
+      <div className="max-w-[60%] min-h-[199px] p-5 rounded-lg bg-white">
+      <h2 className="text-xl p-3  text-white font-semibold  mb-4">Edit Profile</h2>
       <input
         type="text"
         placeholder="Enter username"
@@ -54,7 +55,7 @@ function Update({ profiles, setProfiles }) {
         onChange={(e) => setUsername(e.target.value)}
         className="border p-2 rounded-md mb-3"
       />
-      <button onClick={handleSearch} className="bg-blue-500 text-white py-2 px-4 rounded-md mb-3">
+      <button onClick={handleSearch} className="bg-blue-500 ml-3 text-white py-2 px-4 rounded-md mb-3">
         Search Profile
       </button>
 
@@ -90,7 +91,9 @@ function Update({ profiles, setProfiles }) {
             Update Profile
           </button>
         </form>
+        
       )}
+      </div>
     </div>
     <Footer/>
     </div>

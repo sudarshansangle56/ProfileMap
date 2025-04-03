@@ -1,6 +1,9 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 function Profile({ user, deleteProfile }) {
+  const navigate = useNavigate();
+
   return (
     <div className="h-10 bg-white min-w-[300px] min-h-[400px] mb-4 mt-4 rounded-md">
       <div className="flex justify-center items-center">
@@ -15,7 +18,10 @@ function Profile({ user, deleteProfile }) {
         <p>Description: {user.description}</p>
         <h3>Location: {user.location}</h3>
         <div className="">
-          <button className="h-6 mr-2 w-[100px] bg-blue-500 text-white rounded-lg">
+          <button
+            className="h-6 mr-2 w-[100px] bg-blue-500 text-white rounded-lg"
+            onClick={() => navigate(`/profile/${user.username}`)}
+          >
             View More
           </button>
           <button

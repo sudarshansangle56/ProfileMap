@@ -34,8 +34,8 @@ function Create({ addProfile }) {
             <Navbar/>
     <div className="flex justify-center items-center min-h-screen">
 
-      <div className='bg-white p-6 rounded-md shadow-lg w-96'>
-        <h2 className='text-xl font-semibold text-center mb-4'>Create Profile</h2>
+      <div className='bg-gray-900 p-6 rounded-md shadow-lg w-96'>
+        <h2 className='text-xl text-white font-semibold text-center mb-4'>Create Profile</h2>
         <form onSubmit={handleSubmit} className='flex flex-col'>
           <input type="text" name="username" placeholder="Username" value={profile.username} onChange={handleChange} className='border p-2 rounded-md mb-3' required />
           <input type="text" name="description" placeholder="Description" value={profile.description} onChange={handleChange} className='border p-2 rounded-md mb-3' required />

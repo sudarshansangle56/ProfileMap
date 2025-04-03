@@ -1,24 +1,54 @@
-import React from 'react'
-import Navbar from './Navbar'
+import React, { useState } from 'react';
+import Navbar from './Navbar';
 
-function details() {
+function Details({ profiles }) {
+  const [sortedProfiles, setSortedProfiles] = useState([...profiles]);
+
+  // Function to sort profiles by name
+  const sortByName = () => {
+    const sorted = [...sortedProfiles].sort((a, b) => a.username.localeCompare(b.username));
+    setSortedProfiles(sorted);
+  };
+
   return (
     <div>
-      <Navbar/>
-       <div className='h-10 bg-gray-900  min-w-[300px] min-h-screen p-5'>
-         <div className='flex '>
-            <img className='w-[250px] h-[250px] rounded-2xl mt-2' src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cHJvZmVzc2lvbmFsfGVufDB8fDB8fHww" alt="" srcset="" />
-         </div>
-         <div className='flex justify-center text-white bg-gray-900 flex-col mt-3'>
-         <h2>User-Name:yash gupta</h2>
-         <p>Description:Spftware eng Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur in est praesentium natus, nam suscipit enim ex temporibus ratione impedit eos laudantium? loren33</p>
-          <h3>Location: Nashik</h3>
-          <button className='h-6 w-[100px] bg-red-500 rounded-lg size-3'>View More</button>
-         </div>
+      <Navbar />
+      <div className='h-auto bg-gray-900 min-w-[300px] min-h-screen p-5'>
+        <h1 className="text-3xl font-bold text-white text-center mb-6">All Profiles</h1>
         
+        <div className="flex justify-center mb-5">
+          <button 
+            className="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600"
+            onClick={sortByName}
+          >
+            Sort by Name
+          </button>
         </div>
+
+        <div className="flex flex-wrap justify-center gap-5">
+          {sortedProfiles.length > 0 ? (
+            sortedProfiles.map((user, index) => (
+              <div key={index} className="bg-white p-4 rounded-lg shadow-lg w-80">
+                <img 
+                  className="w-full h-[250px] rounded-2xl object-cover"
+                  src={user.image || "https://via.placeholder.com/250"}
+                  alt={user.username}
+                />
+                <div className="text-center mt-3">
+                  <h2 className="text-lg font-semibold">{user.username}</h2>
+                  <p className="">Description: {user.description}</p>
+                  <h3 className="">Location: {user.location}</h3>
+                  <button className="mt-2 bg-red-500 text-white px-4 py-1 rounded-lg">View More</button>
+                </div>
+              </div>
+            ))
+          ) : (
+            <p className="text-white text-center">No profiles available.</p>
+          )}
+        </div>
+      </div>
     </div>
-  )
+  );
 }
 
-export default details
+export default Details;
